@@ -4,8 +4,15 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Amplify from "aws-amplify";
 import config from "./config";
 
+//import './assets/css/bootstrap.min.css';
+import './styles/index.min.css';
+import './styles/tree.css';
 import './index.css';
 import App from './App';
+
+if (process.env.NODE_ENV !== 'production') {
+  localStorage.setItem('debug', 'turtleDB:*');
+}
 
 Amplify.configure({
     Auth: {
@@ -23,7 +30,3 @@ ReactDOM.render(
     </Router>,
     document.getElementById("root")
   );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA

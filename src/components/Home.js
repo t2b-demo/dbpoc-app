@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./Home.css";
+import MainPage from "./MainPage"
+
 
 export default class Home extends Component {
   constructor(props) {
@@ -35,21 +37,16 @@ export default class Home extends Component {
     );
   }
 
-  renderAuthPage() {
+  renderMainPage() {
     return (
-      <div className="AuthPage">
-      <div className="landing">
-        <h1>Cognito Authentication Demo</h1>
-        <p>Consider yourself happy if you could see this...</p>
-      </div>
-    </div>
+      <MainPage />
     );
   }
 
   render() {
     return (
       <div className="Home">
-        {this.props.isAuthenticated ? this.renderAuthPage() : this.renderLanding()}
+        {this.props.isAuthenticated ? this.renderMainPage() : this.renderLanding()}
       </div>
     );
   }
