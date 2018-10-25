@@ -10,22 +10,22 @@ class SyncButton extends React.Component {
           <h4>Synchronize Database</h4>
           <Grid >
             <Row className="show-grid">          
-              <Col md={2} mdPush={6}>
+              <Col md={3} xsOffset={3}>
                 <FormGroup>
-                  <Checkbox inline
-                  id="auto-sync-checkbox"
-                  checked={this.props.autoSync}
-                  onChange={this.props.handleAutoSyncClick}
-                  >AutoSync</Checkbox>
-                </FormGroup>
-              </Col>
-              <Col md={2} mdPull={0}>
-                <Button
+                  <Button
+                    style={{marginRight: 40}}
                     bsStyle="primary"
                     onClick={this.props.handleSyncClick}
                     disabled={this.props.autoSync}
-                  >Sync
-                </Button>
+                    >Sync
+                  </Button>
+                  <Checkbox inline
+                    id="auto-sync-checkbox"
+                    checked={this.props.autoSync}
+                    onChange={this.props.handleAutoSyncClick}
+                    >AutoSync
+                  </Checkbox>
+                </FormGroup>
               </Col>
             </Row>
           </Grid>
