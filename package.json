@@ -1,7 +1,21 @@
 {
   "name": "dbpoc-app",
   "version": "1.0.0",
-  "private": true,
+  "description": "React Frontend of the turtleDB POC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/t2b-demo/dbpoc-app.git"
+  },
+  "keywords": [],
+  "author": "Bernard Adanlessossi",
+  "license": "ISC",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "deploy": "aws s3 sync build/ s3://t2b-demo.ch",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "aws-amplify": "^1.1.6",
     "react": "^16.5.2",
@@ -16,12 +30,8 @@
     "react-tree-graph": "^3.2.0",
     "turtledb": "^1.0.2"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "deploy": "aws s3 sync build/ s3://t2b-demo.ch",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "jest": "^23.6.0"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -31,8 +41,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "devDependencies": {
-    "jest": "^23.6.0"
-  }
+  ]
 }

@@ -58,7 +58,7 @@ class TreeDisplay extends React.Component {
       tree = <Tree
         data={treeData}
         height={300}
-        width={450}
+        width={350}
         svgProps={{ className: 'custom' }}
         nodeOffset={-10}
         nodeRadius={10}
