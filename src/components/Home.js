@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Button, Jumbotron } from 'react-bootstrap';
 import "./Home.css";
 import MainPage from "./MainPage"
 
@@ -28,12 +29,12 @@ export default class Home extends Component {
 
   renderLanding() {
     return (
-      <div className="Home">
-        <div className="landing">
-          <h1>DB POC</h1>
-          <p>A simple turtle DB POC</p>
-        </div>
-      </div>
+      <Jumbotron bsClass="landing">
+        <h1>DB POC</h1>
+        <p>This is A simple turtle DB POC.</p>
+        <p><Button bsStyle="primary">Learn more</Button>
+        </p>
+      </Jumbotron>
     );
   }
 

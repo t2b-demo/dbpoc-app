@@ -83,6 +83,9 @@ class TableComponent extends React.Component {
     let headerComponents;
     let rowComponents;
 
+    console.log('------------- Docs length ------------------');
+    console.log(this.props.data.docs.length);
+
     if (this.props.data.docs.length > 0) {
       headerComponents = this.generateHeaders();
       rowComponents = this.generateRows();
@@ -114,7 +117,7 @@ class TableComponent extends React.Component {
         </Modal>}
       </div>
     );
-  }
+  } 
 }
 
 export default TableComponent;

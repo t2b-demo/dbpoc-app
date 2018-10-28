@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormControl, FormGroup, ButtonToolbar, Button, Grid, Row, Col } from 'react-bootstrap';
 
 class InsertDoc extends React.Component {
   constructor(props) {
@@ -39,55 +40,76 @@ class InsertDoc extends React.Component {
 
   render() {
     return (
-      <div className='row'>
-        <div className="col">
-          <form className="form-inline" onSubmit={this.handleInsertClick}>
-            <div className="form-row"> 
-                <div className="form-group col">
-                <label htmlFor="name">Name</label>
-                <input type="text" className="form-control"  
-                  name="name" 
-                  value={this.props.name} onChange={this.handleChange} />
-                </div>
-            </div>
-            <div className="form-row">
-                <div className="form-group col">
-                <label htmlFor="age">Age</label>
-                <input type="number" className="form-control"  
-                  name="age" 
-                  value={this.props.age} onChange={this.handleChange}/>
-                </div>
-            </div>
-            <div className="form-row">
-                <div className="form-group col">
-                <label htmlFor="email">Email</label>
-                <input type="email" className="form-control" 
-                  name="email" 
-                  value={this.props.email} onChange={this.handleChange}/>
-                </div>
-            </div>
-            <div className="form-row">
-                <div className="form-group col">
-                <label htmlFor="phone">Phone</label>
-                <input type="phone" className="form-control" 
-                  name="phone"  
-                  value={this.props.phone} onChange={this.handleChange}/>
-                </div>
-            </div>
-            <div className="form-row">
-                <div className="form-group col">
-                <label htmlFor="company">Company</label>
-                <input type="text" className="form-control" 
-                  name="company" 
-                  value={this.props.company} onChange={this.handleChange}/>
-                </div>
-            </div>
-            <div style={{marginTop: 40}}>
-              <input className="btn btn-primary" type="submit" value="Save" />
-              <button className="btn btn-danger" value="cancel" style={{paddingLeft: 10}} onClick={this.props.closeModal}>Cancel</button>
-            </div>
-          </form>
-        </div>
+      <div>
+        <h4>Insert into the DB</h4>
+        <Grid >
+          <Row className="show-grid">
+            <Col md={3}>
+            <form >
+              <FormGroup controlId="formBasicText" >
+                <FormControl
+                  type="text"
+                  value={this.props.name}
+                  name="name"
+                  placeholder="Name"
+                  onChange={this.handleChange}
+                  />
+                
+                <FormControl
+                  type="number"
+                  value={this.props.age}
+                  name="age"
+                  placeholder="Age"
+                  onChange={this.handleChange}
+                  />
+                
+                <FormControl
+                  type="email"
+                  value={this.props.email}
+                  name="email"
+                  placeholder="Email"
+                  onChange={this.handleChange}
+                  />
+                
+                <FormControl
+                  type="phone"
+                  value={this.props.phone}
+                  name="phone"
+                  placeholder="Phone"
+                  onChange={this.handleChange}
+                  />
+                
+                <FormControl
+                  type="text"
+                  value={this.props.company}
+                  name="company"
+                  placeholder="Company"
+                  onChange={this.handleChange}
+                  />
+              </FormGroup>
+              <div>
+                <ButtonToolbar>
+                  <Button 
+                    type="submit" 
+                    bsStyle="primary" 
+                    bsSize="small"
+                    onClick={this.handleInsertClick}>
+                    Save
+                  </Button>
+
+                  <Button 
+                    type="submit" 
+                    onClick={this.props.closeModal}
+                    bsStyle="primary" 
+                    bsSize="small">
+                    Cancel
+                  </Button>
+                </ButtonToolbar>
+              </div>
+            </form>
+            </Col>
+          </Row>
+        </Grid>
       </div>
     )
   }

@@ -202,40 +202,42 @@ export default class MainPage extends Component {
 
   render() {
     return (
-      <Grid>
-        <Row className="show-grid">
-          <Col md={2} xsOffset={1}>
-            <ControlPanel style={{marginTop: 40}}
-                handleInsertClick={this.handleInsertClick}
-                handleUpdateClick={this.handleUpdateClick}
-                handleDeleteClick={this.handleDeleteClick}
-                handleDropDatabase={this.handleDropDatabase}
-                handleSyncClick={this.handleSyncClick}
-                handleAutoSyncClick={this.handleAutoSyncClick}
-                autoSync={this.state.autoSync}
-                handleCompactClick={this.handleCompactClick}
+      <div style={{marginTop: 40}}>
+        <Grid>
+          <Row className="show-grid">
+            <Col md={2} xsOffset={1}>
+              <ControlPanel style={{marginTop: 40}}
+                  handleInsertClick={this.handleInsertClick}
+                  handleUpdateClick={this.handleUpdateClick}
+                  handleDeleteClick={this.handleDeleteClick}
+                  handleDropDatabase={this.handleDropDatabase}
+                  handleSyncClick={this.handleSyncClick}
+                  handleAutoSyncClick={this.handleAutoSyncClick}
+                  autoSync={this.state.autoSync}
+                  handleCompactClick={this.handleCompactClick}
+                />
+            </Col>
+            <Col >
+              <TreeComponent
+                selectedTreeMetaDoc={this.state.selectedTreeMetaDoc}
+                selectedTreeDoc={this.state.selectedTreeDoc}
+                handleTreeDocClick={this.handleTreeDocClick}
+                handlePickWinnerClick={this.handlePickWinnerClick}
               />
-          </Col>
-          <Col >
-            <TreeComponent
-              selectedTreeMetaDoc={this.state.selectedTreeMetaDoc}
-              selectedTreeDoc={this.state.selectedTreeDoc}
-              handleTreeDocClick={this.handleTreeDocClick}
-              handlePickWinnerClick={this.handlePickWinnerClick}
-            />
-          </Col>
-        </Row>
-        <Row className="show-grid" style={{marginTop: 40}}>
-          <Col md={9} mdPush={1}>
-            <TableComponent
-                data={this.state.data}
-                handleSingleDeleteClick={this.handleSingleDeleteClick}
-                handleSingleUpdateClick={this.handleSingleUpdateClick}
-                handleViewTreeClick={this.handleViewTreeClick}
-              />
-          </Col>
-        </Row>
-      </Grid>
+            </Col>
+          </Row>
+          <Row className="show-grid" style={{marginTop: 40}}>
+            <Col md={9} mdPush={1}>
+              <TableComponent
+                  data={this.state.data}
+                  handleSingleDeleteClick={this.handleSingleDeleteClick}
+                  handleSingleUpdateClick={this.handleSingleUpdateClick}
+                  handleViewTreeClick={this.handleViewTreeClick}
+                />
+            </Col>
+          </Row>
+        </Grid>
+      </div>
     );
   }
 }

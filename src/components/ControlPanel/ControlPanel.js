@@ -6,7 +6,6 @@ class ControlPanel extends React.Component {
   render() {
     return (
       <div>
-        <h4>Insert into turtleDB</h4>
         <InsertDoc handleInsertClick={this.props.handleInsertClick} />
         <SyncButton 
           handleSyncClick={this.props.handleSyncClick}
