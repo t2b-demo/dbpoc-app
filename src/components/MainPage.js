@@ -10,7 +10,7 @@ import "./MainPage.css";
 
 const dbName = "demo";
 const turtleDB = new TurtleDB(dbName);
-turtleDB.setRemote('http://localhost:3000');
+turtleDB.setRemote('http://35.159.30.70:3000');
 window.turtleDB = turtleDB;
 
 
